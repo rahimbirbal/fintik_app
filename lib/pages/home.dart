@@ -1,3 +1,4 @@
+import 'package:fintek_app/pages/user_page.dart';
 import 'package:fintek_app/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -48,17 +49,22 @@ class Home extends StatelessWidget {
                             SizedBox(
                               width: 8,
                             ),
-                            Container(
-                                height: 32,
-                                width: 32,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/profile_01.png'),
-                                      fit: BoxFit.fitWidth),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(36, 36)),
-                                ))
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const UserPage(),));
+                              },
+                              child: Container(
+                                  height: 32,
+                                  width: 32,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/profile_01.png'),
+                                        fit: BoxFit.fitWidth),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.elliptical(36, 36)),
+                                  )),
+                            )
                           ],
                         )
                       ],
